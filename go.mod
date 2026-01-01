@@ -1,3 +1,3 @@
-module go_photo
+module github.com/selfup/go_photo
 
 go 1.25.5
