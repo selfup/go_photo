@@ -10,7 +10,7 @@ The tool automatically creates `JPEG/`, `HEIF/`, `RAW/`, `MOV/`, `BRAW/`, and `M
 go_photo -src <source_dir> -dst <destination_dir>
 ```
 
-### Examples
+### Examples (macOS)
 
 ```bash
 # Import from SD card
@@ -21,6 +21,19 @@ go_photo -src /Volumes/VolumeName -dst ~/Pictures/DestinationFolder
 
 # Import from external SSD
 go_photo -src /Volumes/VolumeName -dst ~/Pictures/DestinationFolder
+```
+
+### Examples (Windows)
+
+```powershell
+# Import from SD card
+go_photo -src E:\DCIM -dst D:\Pictures\DestinationFolder
+
+# Import from CFexpress card
+go_photo -src F:\DCIM -dst D:\Pictures\DestinationFolder
+
+# Import from external SSD
+go_photo -src G:\ -dst D:\Pictures\DestinationFolder
 ```
 
 ## Install Globally (as a cli tool)
