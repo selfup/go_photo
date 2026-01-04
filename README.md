@@ -23,13 +23,13 @@ go_photo -src /Volumes/VolumeName -dst ~/Pictures/DestinationFolder
 go_photo -src /Volumes/VolumeName -dst ~/Pictures/DestinationFolder
 ```
 
-## Install (as a cli tool)
+## Install Globally (as a cli tool)
 
 ```bash
 go install github.com/selfup/go_photo@latest
 ```
 
-## Build (if cloned)
+## Build Locally (if cloned)
 
 ```bash
 go build -o go_photo .
@@ -93,7 +93,7 @@ If not, it will create the sub directories for you.
     └── *.MP4 (Ex: from FX3)
 ```
 
-Real Examples:
+## Real Examples:
 
 `go run main.go -src E:/XS20/DCIM -dst D:/XS20`
 
