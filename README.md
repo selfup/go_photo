@@ -95,10 +95,10 @@ If not, it will create the sub directories for you.
 
 Real Examples:
 
-`go run main.go /Volumes/OWC1TB/DCIM /Volumes/T9/XH2S`
+`go run main.go -src /Volumes/OWC1TB/DCIM -dst /Volumes/T9/XH2S`
 
-`go run /Volumes/SanDisk2TB /Volumes/T9/BMPCC4k`
+`go run main.go -src /Volumes/SanDisk2TB -dst /Volumes/T9/BMPCC4k`
 
-`go run /Volumes/Lexar512GB /Volumes/T9/Pyxis6k`
+`go run main.go -src /Volumes/Lexar512GB -dst /Volumes/T9/Pyxis6k`
 
-`go run /Volumes/FX3/PRIVATE/M4ROOT/CLIP /Volumes/T9/FX3`
+`go run main.go -src /Volumes/FX3/PRIVATE/M4ROOT/CLIP -dst /Volumes/T9/FX3`
