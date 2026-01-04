@@ -70,7 +70,7 @@ Extensions are lowercased internally to avoid case sensitivity issues.
 
 ### Example: Source to Destination
 
-**src /Volumes/XS20/DCIM**
+`-src /Volumes/XS20/DCIM`
 
 The program walks all sub directories for you.
 
@@ -79,11 +79,23 @@ The program walks all sub directories for you.
 /Volumes/XS20/DCIM/100FUJI/*.RAF
 /Volumes/XS20/DCIM/101FUJI/*.RAF
 /Volumes/XS20/DCIM/102FUJI/*.JPG
+```
+
+`-src /Volumes/BMPCC4K_SSD`
+
+**Source (SSD):**
+```
 /Volumes/BMPCC4K_SSD/*.BRAW
+```
+
+`-src /Volumes/FX3/PRIVATE/M4ROOT/CLIP`
+
+**Source (SD Card):**
+```
 /Volumes/FX3/PRIVATE/M4ROOT/CLIP/*.MP4
 ```
 
-**dst ~/Documents/XS20**
+`-dst ~/Documents/DestinationFolder`
 
 The program auto imports file types to their respective sub directory.
 
@@ -91,7 +103,7 @@ If the directory already exists it will simply append new files.
 
 If not, it will create the sub directories for you.
 
-**Destination after running `go_photo -src /Volumes/MediaName -dst ~/Documents/DestinationFolder`:**
+**Destination after running `go_photo -src /Volumes/XS20/DCIM -dst ~/Documents/DestinationFolder`:**
 ```
 ~/Documents/DestinationFolder/
 ├── JPEG/
@@ -100,8 +112,19 @@ If not, it will create the sub directories for you.
 │   └── *.RAF (Ex: from XS20)
 ├── MOV/
 │   └── *.MOV (Ex: from XS20)
+```
+
+**Destination after running `go_photo -src /Volumes/BMPCC4K_SSD -dst ~/Documents/DestinationFolder`:**
+```
+~/Documents/DestinationFolder/
 ├── BRAW/
 │   └── *.BRAW (Ex: from BMPCC4K)
+```
+
+**Destination after running `go_photo -src /Volumes/FX3/PRIVATE/M4ROOT/CLIP -dst ~/Documents/DestinationFolder`:**
+
+```
+~/Documents/DestinationFolder/
 └── MP4/
     └── *.MP4 (Ex: from FX3)
 ```
