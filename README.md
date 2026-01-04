@@ -95,6 +95,8 @@ If not, it will create the sub directories for you.
 
 Real Examples:
 
+`go run main.go -src E:/XS20/DCIM -dst D:/XS20`
+
 `go run main.go -src /Volumes/OWC1TB/DCIM -dst /Volumes/T9/XH2S`
 
 `go run main.go -src /Volumes/SanDisk2TB -dst /Volumes/T9/BMPCC4k`
