@@ -1,8 +1,8 @@
 # go_photo
 
-A simple CLI tool to organize photos from storage media into categorized folders.
+A simple CLI tool to organize photos and videos from storage media into categorized folders.
 
-The tool automatically creates `JPEG/`, `HEIF/`, and `RAW/` directories in your destination folder as needed.
+The tool automatically creates `JPEG/`, `HEIF/`, `RAW/`, `MOV/`, `BRAW/`, and `MP4/` directories in your destination folder as needed.
 
 ## Usage
 
@@ -14,13 +14,13 @@ go_photo -src <source_dir> -dst <destination_dir>
 
 ```bash
 # Import from SD card
-go_photo -src /Volumes/EOS_DIGITAL -dst ~/Pictures/Import
+go_photo -src /Volumes/VolumeName -dst ~/Pictures/DestinationFolder
 
 # Import from CFexpress card
-go_photo -src /Volumes/CFEXPRESS -dst ~/Pictures/Import
+go_photo -src /Volumes/VolumeName -dst ~/Pictures/DestinationFolder
 
 # Import from external SSD
-go_photo -src /Volumes/SanDisk -dst ~/Pictures/Import
+go_photo -src /Volumes/VolumeName -dst ~/Pictures/DestinationFolder
 ```
 
 ## Install (as a cli tool)
@@ -49,6 +49,9 @@ go build -o go_photo .
 | .jpg, .jpeg | JPEG/ |
 | .heif, .heic | HEIF/ |
 | .raw, .arw, .raf, .nef | RAW/ |
+| .mov | MOV/ |
+| .braw | BRAW/ |
+| .mp4 | MP4/ |
 
 Extensions are lowercased internally to avoid case sensitivity issues.
 
@@ -63,6 +66,8 @@ The program walks all sub directories for you.
 /Volumes/XS20/DCIM/100FUJI/*.RAF
 /Volumes/XS20/DCIM/101FUJI/*.RAF
 /Volumes/XS20/DCIM/102FUJI/*.JPG
+/Volumes/BMPCC4K_SSD/*.BRAW
+/Volumes/FX3/PRIVATE/M4ROOT/CLIP/*.MP4
 ```
 
 **dst ~/Documents/XS20**
@@ -73,11 +78,27 @@ If the directory already exists it will simply append new files.
 
 If not, it will create the sub directories for you.
 
-**Destination after running `go_photo -src /Volumes/XS20 -dst ~/Documents/XS20`:**
+**Destination after running `go_photo -src /Volumes/MediaName -dst ~/Documents/DestinationFolder`:**
 ```
-~/Documents/XS20/
+~/Documents/DestinationFolder/
 ├── JPEG/
-│   └── *.JPG
-└── RAW/
-    └── *.RAF
+│   └── *.JPG (Ex: from XS20)
+├── RAW/
+│   └── *.RAF (Ex: from XS20)
+├── MOV/
+│   └── *.MOV (Ex: from XS20)
+├── BRAW/
+│   └── *.BRAW (Ex: from BMPCC4K)
+└── MP4/
+    └── *.MP4 (Ex: from FX3)
 ```
+
+Real Examples:
+
+`go run main.go /Volumes/OWC1TB/DCIM /Volumes/T9/XH2S`
+
+`go run /Volumes/SanDisk2TB /Volumes/T9/BMPCC4k`
+
+`go run /Volumes/Lexar512GB /Volumes/T9/Pyxis6k`
+
+`go run /Volumes/FX3/PRIVATE/M4ROOT/CLIP /Volumes/T9/FX3`

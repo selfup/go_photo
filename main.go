@@ -18,6 +18,9 @@ var extensionToFolder = map[string]string{
 	".arw":  "RAW",
 	".raf":  "RAW",
 	".nef":  "RAW",
+	".mov":  "MOV",
+	".braw": "BRAW",
+	".mp4":  "MP4",
 }
 
 func main() {
